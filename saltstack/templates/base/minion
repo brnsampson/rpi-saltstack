@@ -514,6 +514,8 @@ file_client: local
 #  base:
 #    - /srv/salt
 file_roots:
+  base:
+    - /srv/salt
   prod:
     - /srv/salt/prod
   prod:
@@ -523,6 +525,26 @@ file_roots:
     - /srv/salt/dev
     - /srv/salt/qa
     - /srv/salt/prod
+
+# Use gitfs as well as roots
+fileserver_backend:
+  - git
+  - roots
+
+gitfs_provider: pygit2
+
+gitfs_remotes:
+  - https://github.com/brnsampson/rpi-saltstack.git:
+    - root: saltstack
+    - base: master
+    - root: salt://git
+    - mountpoint: salt://git
+
+gitfs_env_whitelist:
+  - base
+  - prod
+  - qa
+  - dev
 
 # Uncomment the line below if you do not want the file_server to follow
 # symlinks when walking the filesystem tree. This is set to True

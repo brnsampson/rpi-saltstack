@@ -1,10 +1,10 @@
-prod:
+
+base:
   '*':
     - base
+prod:
   'hub*':
     - hub
 dev:
-  '*':
-    - base
   'hub*':
     - hub
