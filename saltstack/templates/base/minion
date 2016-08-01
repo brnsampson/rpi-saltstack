@@ -534,7 +534,7 @@ fileserver_backend:
 gitfs_provider: pygit2
 
 gitfs_remotes:
-  - https://github.com/brnsampson/rpi-saltstack.git:
+  - git://github.com/brnsampson/rpi-saltstack.git:
     - root: saltstack
     - base: master
     - root: salt://git
