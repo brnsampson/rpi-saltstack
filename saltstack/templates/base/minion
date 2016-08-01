@@ -537,8 +537,6 @@ gitfs_remotes:
   - git://github.com/brnsampson/rpi-saltstack.git:
     - root: saltstack
     - base: master
-    - root: salt://git
-    - mountpoint: salt://git
 
 gitfs_env_whitelist:
   - base
