@@ -14,5 +14,5 @@
 
 # On what interfaces should the DHCP server (dhcpd) serve DHCP requests?
 #	Separate multiple interfaces with spaces, e.g. "eth0 eth1".
-INTERFACESV4="{{ ' '.join([dev for dev in grains['ip_interfaces'].keys() if dev.startswith('usb')]) }}"
+INTERFACESV4="{% for dev in grains['ip_interfaces'].keys() if dev.startswith('usb') %}{{ dev }}{% if not loop.last %},{% endif %}{% endfor%}"
 INTERFACESv6=""
