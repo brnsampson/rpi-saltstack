@@ -3,6 +3,7 @@
 python-pygit2:
   pkg.installed
 
-/etc/salt/minion:
+salt_minion_config:
   file.managed:
+    - name: /etc/salt/minion
     - source: salt://templates/base/minion
