@@ -7,7 +7,7 @@ include:
 
 /usr/lib/systemd/system-shutdown/rpz_shutdown.sh:
   file.managed:
-    - source: salt://files/hub/rpz_shutdown.sh
+    - source: salt://files/rpz_hub/rpz_shutdown.sh
     - user: root
     - group: root
     - mode: 644

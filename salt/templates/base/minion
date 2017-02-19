@@ -538,6 +538,7 @@ gitfs_remotes:
     - root: saltstack
     - base: master
   - git://github.com/brnsampson/rpi-saltstack-base.git
+  - git://github.com/saltstack-formulas/salt-formula.git
 
 gitfs_env_whitelist:
   - base
