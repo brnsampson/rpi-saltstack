@@ -3,4 +3,4 @@
 salt_minion_config:
   file.managed:
     - name: /etc/salt/minion
-    - source: salt://templates/service/salt/minion
+    - source: salt://templates/services/salt/minion

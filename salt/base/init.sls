@@ -4,8 +4,3 @@
 {{ package }}:
   pkg.installed
 {% endfor %}
-
-pygit2:
-  pip.installed:
-    - require:
-      - pkg: python-pip

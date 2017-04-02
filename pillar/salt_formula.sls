@@ -32,14 +32,19 @@ salt:
       - git://github.com/saltstack-formulas/salt-formula.git
       - git://github.com/saltstack-formulas/consul-formula.git
       - git://github.com/saltstack-formulas/jenkins-formula.git
+      - git://github.com/brnsampson/iptables-formula.git
     gitfs_whitelist:
       - base
     file_roots:
       base:
         - /srv/salt
+      develop:
+        - /srv/salt/dev
     pillar_roots:
       base:
         - /srv/pillar
+      develop:
+        - /srv/pillar/dev
     # for salt-api with tornado rest interface
     rest_tornado:
       port: 8000
@@ -88,11 +93,11 @@ salt_formulas:
       # Options passed directly to the git.latest state
       options:
         rev: master
-#    dev:
-#      basedir: /srv/formulas/dev
-#      update: True
-#      options:
-#        rev: develop
+    develop:
+      basedir: /srv/formulas/dev
+      update: True
+      options:
+        rev: develop
   # Options of the file.directory state that creates the directory where
   # the git repositories of the formulas are stored
   basedir_opts:
@@ -110,3 +115,5 @@ salt_formulas:
       - bind-formula
       - iptables-formula
       - network-debian-formula
+    develop:
+      - iptables-formula
