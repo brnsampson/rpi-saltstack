@@ -30,20 +30,22 @@ salt:
     gitfs_provider: pygit2
     gitfs_remotes:
       - git://github.com/saltstack-formulas/salt-formula.git
-      - git://github.com/saltstack-formulas/consul-formula.git
-      - git://github.com/saltstack-formulas/jenkins-formula.git
-      - git://github.com/brnsampson/iptables-formula.git
+      - git://github.com/brnsampson/iptables-formula.git:
+        - saltenv:
+          - dev:
+            - ref: develop
     gitfs_whitelist:
       - base
+      - develop
     file_roots:
       base:
         - /srv/salt
-      develop:
+      dev:
         - /srv/salt/dev
     pillar_roots:
       base:
         - /srv/pillar
-      develop:
+      dev:
         - /srv/pillar/dev
     # for salt-api with tornado rest interface
     rest_tornado:
@@ -93,11 +95,11 @@ salt_formulas:
       # Options passed directly to the git.latest state
       options:
         rev: master
-    develop:
-      basedir: /srv/formulas/dev
-      update: True
-      options:
-        rev: develop
+ #   develop:
+ #     basedir: /srv/formulas/dev
+ #     update: True
+ #     options:
+ #       rev: develop
   # Options of the file.directory state that creates the directory where
   # the git repositories of the formulas are stored
   basedir_opts:
@@ -113,7 +115,4 @@ salt_formulas:
       - jenkins-formula
       - dhcpd-formula
       - bind-formula
-      - iptables-formula
       - network-debian-formula
-    develop:
-      - iptables-formula
