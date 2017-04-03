@@ -535,9 +535,10 @@ gitfs_provider: pygit2
 
 gitfs_remotes:
   - git://github.com/brnsampson/rpi-saltstack.git:
-    - root: saltstack
+    - root: salt
     - base: master
   - git://github.com/brnsampson/rpi-saltstack-base.git
+  - git://github.com/saltstack-formulas/salt-formula.git
 
 gitfs_env_whitelist:
   - base
