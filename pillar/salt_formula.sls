@@ -30,21 +30,24 @@ salt:
     gitfs_provider: pygit2
     gitfs_remotes:
       - git://github.com/saltstack-formulas/salt-formula.git
+      - git://github.com/brnsampson/rpi-saltstack.git
+      - git://github.com/brnsampson/rpi-saltstack-base.git
       - git://github.com/brnsampson/iptables-formula.git:
         - saltenv:
           - dev:
             - ref: develop
     gitfs_whitelist:
       - base
+      - prod
       - develop
     file_roots:
       base:
         - /srv/salt
-      dev:
-        - /srv/salt/dev
     pillar_roots:
       base:
         - /srv/pillar
+      prod:
+        - /srv/pillar/prod
       dev:
         - /srv/pillar/dev
     # for salt-api with tornado rest interface
