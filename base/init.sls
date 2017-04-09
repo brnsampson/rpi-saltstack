@@ -14,9 +14,9 @@
     - home: /home/{{ user['name'] }}
     - groups:
       - sudo
-{%- endfor }
+{%- endfor %}
 
 #{%- for user in pillar.get('absent_users', []) %}
 #{{ user['name'] }}:
 #  user.absent
-#{%- endfor }
+#{%- endfor %}
