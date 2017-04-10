@@ -17,3 +17,4 @@ $TTL    604800
 1       IN      PTR     salt.whobe.us.
 10      IN      PTR     app01.whobe.us.
 11      IN      PTR     app02.whobe.us.
+12      IN      PTR     app03.whobe.us.
