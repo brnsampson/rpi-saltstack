@@ -8,14 +8,15 @@
 {%- for user in pillar.get('users', []) %}
 {{ user['name'] }}:
   user.present:
+    - password: {{ user['password'] }}
     - fullname: {{ user.get('fullname') }}
     - shell: /bin/bash
     - home: /home/{{ user['name'] }}
     - groups:
       - sudo
-{%- endfor }
+{%- endfor %}
 
-{%- for user in pillar.get('absent_users', []) %}
-{{ user['name'] }}:
-  user.absent
-{%- endfor }
+#{%- for user in pillar.get('absent_users', []) %}
+#{{ user['name'] }}:
+#  user.absent
+#{%- endfor %}
