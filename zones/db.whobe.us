@@ -16,4 +16,6 @@ $TTL    604800
 seed01.whobe.us.        IN      A       10.0.0.1
 
 ; host and service A records
-salt.whobe.us.  IN      A       10.0.0.1
+salt.whobe.us.          IN      A       10.0.0.1
+app01.whobe.us.         IN      A       10.0.0.10
+app02.whobe.us.         IN      A       10.0.0.11
