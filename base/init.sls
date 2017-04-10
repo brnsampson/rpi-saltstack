@@ -16,7 +16,7 @@
       - sudo
 {%- endfor %}
 
-#{%- for user in pillar.get('absent_users', []) %}
-#{{ user['name'] }}:
-#  user.absent
-#{%- endfor %}
+{%- for user in pillar.get('absent_users', []) %}
+{{ user['name'] }}:
+  user.absent
+{%- endfor %}
